@@ -16,13 +16,20 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
   font-family: var(--font-main);
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
-  overflow-x: hidden;
 }
 
 /* Background Glows */
@@ -113,6 +120,7 @@ body {
   .hero { text-align: center; }
   .hero__cta { justify-content: center; }
   .hero__trust { justify-content: center; }
+  .preview-card { transform: none; }
 
   .steps {
     display: flex;
@@ -123,7 +131,6 @@ body {
     gap: 16px;
     padding: 20px 4vw 40px;
     margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
     width: 100vw;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -135,7 +142,7 @@ body {
     flex: 0 0 280px;
     min-width: 280px;
     max-width: 280px;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     box-sizing: border-box;
   }
 }
