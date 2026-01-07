@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update the sitemap URL after deployment
+Sitemap: https://crescaweb.com.br/sitemap.xml
