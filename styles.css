@@ -127,7 +127,7 @@ body {
     align-items: stretch;
     flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: y mandatory;
     gap: 16px;
     padding: 20px 4vw 40px;
     margin-left: calc(-50vw + 50%);
