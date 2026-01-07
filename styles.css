@@ -198,7 +198,11 @@ body {
 .features { gap: 24px; }
 .feature { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; }
 
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+/* Swiper Styling */
+.swiper-processo { padding: 20px 0 60px !important; }
+.swiper-slide { height: auto !important; }
+.swiper-pagination-bullet { background: var(--brand) !important; filter: drop-shadow(0 0 5px var(--brand-glow)); }
+
 .step { 
   position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 32px; 
   height: 100%; transition: border-color 0.3s;

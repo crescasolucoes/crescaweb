@@ -96,6 +96,32 @@
     // Initial observe
     document.querySelectorAll("[data-reveal]").forEach(el => revealObserver.observe(el));
 
+    // Swiper Carousel (Zero ao Sucesso)
+    const swiperProcesso = new Swiper('.swiper-processo', {
+        slidesPerView: 1.2,
+        spaceBetween: 14,
+        centeredSlides: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 2.2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+            1024: {
+                slidesPerView: 4,
+                allowTouchMove: false,
+                spaceBetween: 24,
+            },
+        }
+    });
+
     // Sticky header
     const header = document.querySelector("[data-sticky]");
     function onScroll() {

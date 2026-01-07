@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -188,12 +189,25 @@
             <h2>Do zero ao sucesso</h2>
             <p>Um fluxo de trabalho refinado para garantir qualidade e prazos imbatíveis.</p>
           </header>
-          <ol class="steps">
-            <li class="step" data-reveal><span>1</span><div><strong>Imersão</strong><p>Analisamos seu modelo de negócio para propor a melhor tecnologia.</p></div></li>
-            <li class="step" data-reveal><span>2</span><div><strong>Prototipação</strong><p>Você vê e testa a interface antes mesmo de começarmos a codar.</p></div></li>
-            <li class="step" data-reveal><span>3</span><div><strong>Desenvolvimento</strong><p>Sprints ágeis com demonstrações semanais do progresso real.</p></div></li>
-            <li class="step" data-reveal><span>4</span><div><strong>Escala</strong><p>Lançamento assistido e monitoramento constante de performance.</p></div></li>
-          </ol>
+          <!-- Swiper Container -->
+          <div class="swiper swiper-processo">
+            <div class="swiper-wrapper steps-wrapper">
+              <div class="swiper-slide step-slide">
+                <div class="step" data-reveal><span>1</span><div><strong>Imersão</strong><p>Analisamos seu modelo de negócio para propor a melhor tecnologia.</p></div></div>
+              </div>
+              <div class="swiper-slide step-slide">
+                <div class="step" data-reveal><span>2</span><div><strong>Prototipação</strong><p>Você vê e testa a interface antes mesmo de começarmos a codar.</p></div></div>
+              </div>
+              <div class="swiper-slide step-slide">
+                <div class="step" data-reveal><span>3</span><div><strong>Desenvolvimento</strong><p>Sprints ágeis com demonstrações semanais do progresso real.</p></div></div>
+              </div>
+              <div class="swiper-slide step-slide">
+                <div class="step" data-reveal><span>4</span><div><strong>Escala</strong><p>Lançamento assistido e monitoramento constante de performance.</p></div></div>
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </section>
 
@@ -368,6 +382,7 @@
       }
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js" defer></script>
   </body>
   </html>
