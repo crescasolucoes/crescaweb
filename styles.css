@@ -117,15 +117,17 @@ body {
   .steps {
     display: flex;
     align-items: stretch;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 16px;
-    padding: 20px 4% 40px;
-    margin: 0 -4%;
+    padding: 20px 4vw 40px;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    touch-action: pan-x;
+    touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
   }
   .steps::-webkit-scrollbar { display: none; }
