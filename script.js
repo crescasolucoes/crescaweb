@@ -87,14 +87,92 @@
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("revealed");
-                revealObserver.unobserve(entry.target);
+                const el = entry.target;
+
+                // Handle delay
+                const delay = el.getAttribute("data-delay");
+                if (delay) {
+                    el.style.transitionDelay = `${delay}ms`;
+                }
+
+                el.classList.add("revealed");
+
+                // Check for counters on self or children
+                if (el.hasAttribute("data-count")) {
+                    animateCounter(el);
+                }
+                el.querySelectorAll("[data-count]").forEach(c => animateCounter(c));
+
+                revealObserver.unobserve(el);
             }
         });
     }, observerOptions);
 
     // Initial observe
     document.querySelectorAll("[data-reveal]").forEach(el => revealObserver.observe(el));
+
+    // Number Counter Animation
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute("data-target") || "0", 10);
+        const suffix = el.getAttribute("data-suffix") || "";
+        const duration = 2000;
+        const start = 0;
+        const startTime = performance.now();
+
+        function step(currentTime) {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            // Ease out quart
+            const ease = 1 - Math.pow(1 - progress, 4);
+
+            const value = Math.floor(ease * (target - start) + start);
+            el.textContent = value + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = target + suffix;
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    // Parallax Effect
+    document.addEventListener("scroll", () => {
+        const scrolled = window.scrollY;
+
+        // Background heavy blur movement
+        document.querySelectorAll(".glow-blur").forEach((el, index) => {
+            const speed = index % 2 === 0 ? 0.05 : -0.05;
+            el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    }, { passive: true });
+
+    // 3D Tilt Effect for Hero Card
+    const card = document.querySelector(".preview-card");
+    if (card) {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -5; // max 5deg
+            const rotateY = ((x - centerX) / centerX) * 5; // max 5deg
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transition = "transform 0.5s ease";
+            card.style.transform = "perspective(1000px) rotateY(-5deg) rotateX(5deg)";
+            setTimeout(() => {
+                card.style.transition = "";
+            }, 500);
+        });
+    }
 
     // Swiper Carousel (Zero ao Sucesso)
     const swiperProcesso = new Swiper('.swiper-processo', {
@@ -162,14 +240,7 @@
     }
 
     // Reactive sections
-    const kpiRoot = document.querySelector(".kpis__inner[data-markup]");
-    if (kpiRoot) {
-        createMarkup(kpiRoot, {
-            kpiVelocidade: "Sprints",
-            kpiSatisfacao: "100%",
-            kpiAtendimento: "<24h",
-        });
-    }
+    // KPIs handled by HTML data-count
 
     const depoRoot = document.querySelector(".testimonials-grid").parentElement;
     if (depoRoot && depoRoot.hasAttribute("data-markup")) {
