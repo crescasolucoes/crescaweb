@@ -336,7 +336,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .nav {
+  .nav__link,
+  .nav__cta {
     display: none;
   }
 
