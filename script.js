@@ -354,4 +354,58 @@
             }
         });
     }
+    // Theme Handling (System Default + Toggle)
+    function initTheme() {
+        const toggleBtn = document.getElementById("theme-toggle");
+        const sunIcon = document.querySelector(".icon-sun");
+        const moonIcon = document.querySelector(".icon-moon");
+
+        if (!toggleBtn) return;
+
+        // Check functionality: 
+        // 1. LocalStorage
+        // 2. System Preference
+        // Default is dark (since original site was dark), but we want to respect system if light
+
+        function getPreferredTheme() {
+            const stored = localStorage.getItem("theme");
+            if (stored) return stored;
+
+            return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+
+        function setTheme(theme) {
+            const root = document.documentElement;
+            if (theme === "light") {
+                root.classList.add("light-theme");
+                // In Light mode, show Moon (to switch to Dark)
+                sunIcon.style.display = "none";
+                moonIcon.style.display = "block";
+            } else {
+                root.classList.remove("light-theme");
+                // In Dark mode, show Sun (to switch to Light)
+                sunIcon.style.display = "block";
+                moonIcon.style.display = "none";
+            }
+            // Save preference
+            localStorage.setItem("theme", theme);
+        }
+
+        // Initialize
+        setTheme(getPreferredTheme());
+
+        // Toggle Event
+        toggleBtn.addEventListener("click", () => {
+            const current = document.documentElement.classList.contains("light-theme") ? "light" : "dark";
+            const newTheme = current === "light" ? "dark" : "light";
+            setTheme(newTheme);
+        });
+
+        // Listen for system changes if no override is set (optional, but good UX to stick to user choice if they made one)
+        // Here we just listen for changes and update if user hasn't explicitly set a preference in this session? 
+        // Standard behavior: explicit toggle overrides system forever until cleared. 
+        // We stick to the getPreferredTheme logic which prioritizes localStorage.
+    }
+
+    initTheme();
 })();

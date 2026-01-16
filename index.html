@@ -53,6 +53,27 @@
         <a href="#processo" class="nav__link">Processo</a>
         <a href="#faq" class="nav__link">FAQ</a>
         <a href="#contato" class="nav__cta btn btn--sm btn--primary">Solicitar orçamento</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+          <!-- Sun Icon -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -83,18 +104,13 @@
           <div class="preview-card">
             <div class="preview-card__header">crescaweb.com.br/dashboard</div>
             <div class="preview-card__body">
-              <div style="display:flex; gap:12px; margin-bottom:24px;">
-                <div style="flex:1; height:80px; background:rgba(34,197,94,0.1); border-radius:12px;"></div>
-                <div style="flex:1; height:80px; background:rgba(56,189,248,0.1); border-radius:12px;"></div>
+              <div class="preview-card__row">
+                <div class="preview-card__block preview-card__block--1"></div>
+                <div class="preview-card__block preview-card__block--2"></div>
               </div>
-              <div
-                style="height:12px; background:rgba(255,255,255,0.05); border-radius:6px; width:100%; margin-bottom:12px;">
-              </div>
-              <div
-                style="height:12px; background:rgba(255,255,255,0.05); border-radius:6px; width:85%; margin-bottom:12px;">
-              </div>
-              <div style="height:40px; background:var(--brand); border-radius:10px; width:140px; margin-top:20px;">
-              </div>
+              <div class="preview-card__line" style="width: 100%;"></div>
+              <div class="preview-card__line" style="width: 85%;"></div>
+              <div class="preview-card__btn"></div>
             </div>
           </div>
         </div>
