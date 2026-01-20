@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Confirmação — Cresça Soluções</title>
+    <meta name="description" content="Pagamento confirmado! Fale conosco para iniciar seu projeto." />
+
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/assets/logo.png" as="image" type="image/svg+xml" />
+    <link rel="canonical" href="https://crescaweb.com.br/confirmacao" />
+    <meta name="theme-color" content="#111827" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+        /* Specific styles for confirmation page */
+        .hero--centered {
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--brand);
+            color: #000;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            box-shadow: 0 0 40px var(--brand-glow);
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-blur" style="top: -10%; left: 50%; transform: translateX(-50%);"></div>
+
+    <header class="header" data-sticky>
+        <div class="container header__inner">
+            <a href="/" class="brand" aria-label="Cresça Soluções">
+                <img src="/assets/logo.png" alt="Logo Cresça Soluções" class="brand__logo" />
+                <span class="brand__name">Cresça Soluções</span>
+            </a>
+            <nav class="nav" aria-label="Principal">
+                <a href="/" class="nav__link">Voltar ao Início</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                    <!-- Sun Icon -->
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon -->
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="section hero hero--centered">
+            <div class="container">
+                <div data-reveal>
+                    <div class="success-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h1 class="hero__title">
+                        Pagamento <span>Confirmado!</span>
+                    </h1>
+                    <p class="hero__subtitle" style="margin-left: auto; margin-right: auto;">
+                        Obrigado pela confiança. Nossa equipe já recebeu sua confirmação.<br>
+                        Toque no botão abaixo para finalizar seu atendimento via WhatsApp.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 16px;">
+                        <a id="whatsapp-confirm-btn" href="#" class="btn btn--primary">
+                            <span style="margin-right: 8px;">💬</span> Falar com Atendente
+                        </a>
+                        <a href="/" class="btn btn--ghost">Voltar ao site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__bottom" style="border-top: none; padding-top: 0;">
+            <p>© <span id="year"></span> Cresça Soluções · Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+    <script>
+        // Specific script for confirmation page
+        document.addEventListener("DOMContentLoaded", () => {
+            const waBtn = document.getElementById("whatsapp-confirm-btn");
+
+            const PHONE = "5584991659966";
+            const text = encodeURIComponent("Olá! Meu pagamento foi confirmado e gostaria de dar prosseguimento ao atendimento.");
+
+            if (waBtn) {
+                waBtn.href = `https://wa.me/${PHONE}?text=${text}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
