@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+        {
+            "source": "/confirmacao",
+            "destination": "/confirmacao.html"
+        },
+        {
+            "source": "/termos",
+            "destination": "/termos.html"
+        },
+        {
+            "source": "/privacidade",
+            "destination": "/privacidade.html"
+        }
+    ]
+}
