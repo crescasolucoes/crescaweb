@@ -148,45 +148,58 @@ function initAnimations() {
         ease: "none"
     });
 
-    // Project Cards Stacking Effect
-    const sections = gsap.utils.toArray(".project-card-section");
+    // Project Cards Stacking Effect (Desktop Only)
+    // We use matchMedia to disable the pinning/stacking on mobile for smoother native scroll
+    ScrollTrigger.matchMedia({
 
-    sections.forEach((section, i) => {
+        // Desktop
+        "(min-width: 900px)": function () {
+            const sections = gsap.utils.toArray(".project-card-section");
 
-        const card = section.querySelector(".project-card");
-        const image = section.querySelector(".project-visual img");
+            sections.forEach((section, i) => {
+                const card = section.querySelector(".project-card");
+                const image = section.querySelector(".project-visual img");
 
-        // Parallax Effect for Images
-        if (image) {
-            gsap.to(image, {
-                yPercent: 15,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true
-                }
-            });
-        }
-
-        // Pinning Logic
-        ScrollTrigger.create({
-            trigger: section,
-            start: "top top",
-            pin: true,
-            pinSpacing: true, // Enable spacing so content pushes down
-            end: "bottom top",
-            onUpdate: (self) => {
-                if (self.progress > 0) {
-                    gsap.set(card, {
-                        scale: 1 - (self.progress * 0.1),
-                        opacity: 1 - (self.progress * 0.5),
-                        transformOrigin: "center center"
+                // Parallax Effect for Images
+                if (image) {
+                    gsap.to(image, {
+                        yPercent: 15,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true
+                        }
                     });
                 }
-            }
-        });
+
+                // Pinning Logic
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top top",
+                    pin: true,
+                    pinSpacing: true,
+                    end: "bottom top",
+                    onUpdate: (self) => {
+                        if (self.progress > 0) {
+                            gsap.set(card, {
+                                scale: 1 - (self.progress * 0.1),
+                                opacity: 1 - (self.progress * 0.5),
+                                transformOrigin: "center center"
+                            });
+                        }
+                    }
+                });
+            });
+        },
+
+        // Mobile (Optional cleanup or simpler effects if needed)
+        "(max-width: 899px)": function () {
+            // On mobile, we let them scroll naturally.
+            // We can strictly reset ensuring no artifacts remain.
+            gsap.set(".project-card", { clearProps: "all" });
+        }
     });
 }
 
