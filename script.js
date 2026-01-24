@@ -75,18 +75,30 @@ if (form) {
         const originalText = btn.innerText;
         btn.innerText = "Enviando...";
 
-        // Simulating 2024 tech response time
+        // Create WhatsApp Message
+        const name = form.querySelector('input[name="nome"]').value;
+        const email = form.querySelector('input[name="email"]').value;
+        const interest = form.querySelector('select[name="tipo"]').value;
+        const details = form.querySelector('textarea[name="mensagem"]').value;
+
+        const message = `*Novo Lead via Site*%0A%0A*Nome:* ${name}%0A*Email:* ${email}%0A*Interesse:* ${interest}%0A*Detalhes:* ${details}`;
+
+        const whatsappUrl = `https://wa.me/5584991659966?text=${message}`;
+
+        // Simulating 2024 tech response time then redirect
         setTimeout(() => {
             btn.innerText = "Recebido ✓";
             btn.style.background = "#22c55e";
             form.reset();
+
+            // Redirect to WhatsApp
+            window.open(whatsappUrl, '_blank');
+
             setTimeout(() => {
                 btn.innerText = originalText;
                 btn.style.background = "#fff";
             }, 3000);
         }, 1500);
-
-        // Ideally here you send to API/Zapier
     });
 }
 

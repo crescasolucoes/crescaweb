@@ -715,6 +715,12 @@ textarea {
   transition: all 0.3s;
 }
 
+/* Fix for options being white on white in some browsers */
+select option {
+  background-color: #000;
+  color: #fff;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -959,6 +965,10 @@ textarea:focus {
     width: max-content !important;
     padding-right: 20px;
   }
+
+  .email-btn {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -984,7 +994,7 @@ textarea:focus {
   border: 1px solid var(--border);
   padding: 16px 24px;
   border-radius: 12px;
-  width: fit-content;
+  width: 70%;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   text-decoration: none;
 }
