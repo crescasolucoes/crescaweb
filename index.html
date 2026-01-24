@@ -9,430 +9,361 @@
     content="A Cresça Soluções cria sites, sistemas e aplicativos sob medida para gerar resultados reais. Diagnóstico gratuito e proposta rápida. Fale com a gente hoje!" />
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" href="/assets/logo.png" as="image" type="image/svg+xml" />
-  <link rel="canonical" href="https://crescaweb.com.br/" />
-  <meta name="theme-color" content="#111827" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Cresça Soluções — Sites, Sistemas e Aplicativos" />
-  <meta property="og:description"
-    content="Criamos produtos digitais que geram resultado: sites, sistemas e apps sob medida." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://crescaweb.com.br/" />
-  <meta property="og:image" content="https://crescaweb.com.br/assets/og-cover.png" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cresça Soluções — Sites, Sistemas e Aplicativos" />
-  <meta name="twitter:description"
-    content="Criamos produtos digitais que geram resultado: sites, sistemas e apps sob medida." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Fonts: Inter (Unified Stack) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="glow-blur" style="top: -10%; left: -10%;"></div>
-  <div class="glow-blur" style="top: 40%; right: -10%;"></div>
-
-  <a class="skip-to-content" href="#conteudo">Pular para o conteúdo</a>
-
-  <header class="header" data-sticky>
+  <div class="cursor-glow"></div>
+  <header class="header">
     <div class="container header__inner">
-      <a href="#" class="brand" aria-label="Cresça Soluções">
-        <img src="/assets/logo.png" alt="Logo Cresça Soluções" class="brand__logo" />
+      <a href="#" class="brand">
+        <img src="./assets/logo.png" alt="Logo" class="brand__logo" />
         <span class="brand__name">Cresça Soluções</span>
       </a>
-      <nav class="nav" aria-label="Principal">
+      <!-- Mobile Toggle -->
+      <button class="nav__toggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
         <a href="#servicos" class="nav__link">Serviços</a>
         <a href="#processo" class="nav__link">Processo</a>
-        <a href="#faq" class="nav__link">FAQ</a>
-        <a href="#contato" class="nav__cta btn btn--sm btn--primary">Solicitar orçamento</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
-          <!-- Sun Icon -->
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <!-- Moon Icon -->
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            style="display: none;">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
+        <!-- Highlighted link to Portfolio -->
+        <a href="portfolio.html" class="nav__link" style="color: var(--brand);">Portfolio</a>
+        <a href="#contato" class="nav__cta">Orçamento</a>
       </nav>
     </div>
   </header>
 
-  <main id="conteudo" tabindex="-1">
-    <!-- Hero -->
-    <section class="section hero">
-      <div class="container grid-2">
-        <div class="hero__copy" data-reveal>
+  <main id="conteudo">
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero__content">
+          <div class="hero__label">Engenharia Digital de Alto Nível</div>
           <h1 class="hero__title">
-            Sua ideia transformada em <span>tecnologia de elite</span>
+            Criamos o <em>invisível</em> que torna seu negócio <em>invencível</em>.
           </h1>
           <p class="hero__subtitle">
-            Criamos ecossistemas digitais robustos: do site institucional que vende ao sistema complexo que escala sua
-            operação.
+            Não entregamos apenas "sites". Entregamos infraestrutura de crescimento, segurança e escala para empresas
+            que não podem parar.
           </p>
-          <div class="hero__cta">
-            <a href="#contato" class="btn btn--primary">Começar meu projeto</a>
-            <a href="#servicos" class="btn btn--ghost">Nossas soluções</a>
-          </div>
-          <div class="hero__trust">
-            <span class="badge">Diagnóstico em 24h</span>
-            <span class="badge">Tech Stack Moderna</span>
-            <span class="badge">Design Premium</span>
+          <div class="hero__actions">
+            <a href="#contato" class="p-btn"
+              style="background: var(--brand); color: #000; border-color: var(--brand); margin:0;">Iniciar Projeto</a>
           </div>
         </div>
-        <div class="hero__visual animate-float" data-reveal>
-          <div class="preview-card">
-            <div class="preview-card__header">crescaweb.com.br/dashboard</div>
-            <div class="preview-card__body">
-              <div class="preview-card__row">
-                <div class="preview-card__block preview-card__block--1"></div>
-                <div class="preview-card__block preview-card__block--2"></div>
-              </div>
-              <div class="preview-card__line" style="width: 100%;"></div>
-              <div class="preview-card__line" style="width: 85%;"></div>
-              <div class="preview-card__btn"></div>
-            </div>
-          </div>
+
+        <div class="hero__abstract">
+          <!-- Animated Wireframe SVG -->
+          <svg id="wireframe-svg" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Browser Shell -->
+            <g class="wf-shell">
+              <rect x="50" y="50" width="500" height="350" rx="8" fill="#111" stroke="#333" stroke-width="2" />
+              <circle cx="70" cy="70" r="4" fill="#555" />
+              <circle cx="85" cy="70" r="4" fill="#555" />
+              <circle cx="100" cy="70" r="4" fill="#555" />
+              <line x1="50" y1="90" x2="550" y2="90" stroke="#333" stroke-width="2" />
+            </g>
+
+            <!-- Header -->
+            <g class="wf-header">
+              <rect x="80" y="110" width="40" height="20" rx="4" fill="#22c55e" opacity="0.8" />
+              <rect x="350" y="115" width="170" height="10" rx="2" fill="#333" />
+            </g>
+
+            <!-- Hero Section -->
+            <g class="wf-hero">
+              <rect x="80" y="160" width="200" height="15" rx="2" fill="#fff" opacity="0.9" />
+              <rect x="80" y="185" width="150" height="15" rx="2" fill="#fff" opacity="0.5" />
+              <rect x="80" y="220" width="100" height="30" rx="4" fill="#22c55e" />
+              <!-- Hero Image -->
+              <rect x="320" y="160" width="200" height="120" rx="4" fill="#222" stroke="#333" />
+              <path d="M360 220 L380 200 L410 230" stroke="#444" stroke-width="2" />
+            </g>
+
+            <!-- Grid Section -->
+            <g class="wf-grid">
+              <rect x="80" y="310" width="130" height="60" rx="4" fill="#222" stroke="#333" />
+              <rect x="235" y="310" width="130" height="60" rx="4" fill="#222" stroke="#333" />
+              <rect x="390" y="310" width="130" height="60" rx="4" fill="#222" stroke="#333" />
+            </g>
+
+            <!-- Code Snippets (Floating) -->
+            <g class="wf-code" opacity="0.5">
+              <rect x="40" y="150" width="60" height="4" rx="2" fill="#22c55e" />
+              <rect x="30" y="160" width="40" height="4" rx="2" fill="#22c55e" />
+              <rect x="520" y="280" width="50" height="4" rx="2" fill="#22c55e" />
+            </g>
+          </svg>
         </div>
+
       </div>
+      <div class="hero__scroll">Role para Explorar</div>
     </section>
 
-    <!-- Social proof / KPIs -->
-    <section class="section kpis" data-reveal>
+    <!-- KPIs -->
+    <section class="section kpis">
       <div class="container kpis__inner">
-        <div class="kpi" data-reveal data-delay="100">
-          <!-- "Sprints" was text, changing to "Entrega Ágil" with a number or just keeping it consistent -->
-          <strong data-count data-target="15" data-suffix=" dias">0</strong>
-          <span>Sprint Médio</span>
+        <div class="kpi">
+          <strong data-count="15">15</strong>
+          <span>Dias de Sprint</span>
         </div>
-        <div class="kpi" data-reveal data-delay="300">
-          <strong data-count data-target="100" data-suffix="%">0</strong>
+        <div class="kpi">
+          <strong data-count="100">100%</strong>
           <span>Satisfação</span>
         </div>
-        <div class="kpi" data-reveal data-delay="500">
-          <!-- Handling prefix in the static text or modifying JS. Let's put < in the suffix for now slightly hacky or just "24h" -->
-          <strong data-count data-target="24" data-suffix="h">0</strong>
-          <span>Primeiro Contato</span>
+        <div class="kpi">
+          <strong data-count="24">24h</strong>
+          <span>Resposta Inicial</span>
         </div>
       </div>
     </section>
 
-    <!-- Serviços -->
+    <!-- Services (Horizontal Scroll) -->
     <section id="servicos" class="section">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <h2>Dominamos o ciclo completo</h2>
-          <p>Não importa o desafio, temos a expertise técnica para construir a solução perfeita.</p>
-        </header>
-        <div class="cards grid-3">
-          <article class="card" data-reveal data-delay="100">
+      <div class="container section__head">
+        <h2>Ciclo Completo</h2>
+        <p>Expertise técnica para construir a solução perfeita.</p>
+      </div>
+
+      <!-- GSAP Horizontal Track -->
+      <div class="services-wrapper">
+        <div class="services-track">
+
+          <div class="service-card">
             <h3>Sites de Alta Conversão</h3>
             <p>Landing pages e sites institucionais com design premium, focados em transformar visitantes em clientes.
             </p>
             <ul class="list">
-              <li>Performance máxima (Core Web Vitals)</li>
-              <li>SEO avançado e Copywriting</li>
-              <li>Dashboard de métricas integrado</li>
+              <li>Performance extrema</li>
+              <li>SEO Avançado</li>
+              <li>Design Editorial</li>
             </ul>
-          </article>
-          <article class="card" data-reveal data-delay="300">
-            <h3>Sistemas e SaaS</h3>
-            <p>Plataformas web complexas para gerir seu negócio ou lançar seu próprio produto digital.</p>
+          </div>
+
+          <div class="service-card">
+            <h3>Sistemas & SaaS</h3>
+            <p>Plataformas web complexas para gerir seu negócio ou lançar seu próprio produto digital com
+              escalabilidade.</p>
             <ul class="list">
-              <li>Arquitetura em nuvem escalável</li>
-              <li>Segurança e criptografia de dados</li>
-              <li>Integrações com APIs de terceiros</li>
+              <li>Arquitetura Cloud</li>
+              <li>Segurança de Dados</li>
+              <li>API Restful</li>
             </ul>
-          </article>
-          <article class="card" data-reveal data-delay="500">
+          </div>
+
+          <div class="service-card">
             <h3>Aplicativos Mobile</h3>
             <p>Experiências nativas para iOS e Android que colocam sua marca no bolso do seu cliente.</p>
             <ul class="list">
-              <li>Interface intuitiva (UX/UI)</li>
-              <li>Notificações e Offline mode</li>
-              <li>Hospedagem e publicação nas lojas</li>
+              <li>React Native / Flutter</li>
+              <li>Offline Mode</li>
+              <li>Publicação nas Lojas</li>
             </ul>
-          </article>
+          </div>
+
+          <div class="service-card" style="justify-content:center; align-items:center; text-align:center;">
+            <h3>Sua Ideia <br>Aqui</h3>
+            <a href="#contato" class="nav__cta" style="margin-top:20px;">Fale Conosco</a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Versatilidade Tech -->
+    <!-- Tech Stack -->
+    <section class="section section--alt">
+      <div class="container text-center">
+        <div class="tech-cloud">
+          <span class="tech-chip">Next.js</span>
+          <span class="tech-chip">React</span>
+          <span class="tech-chip">Node.js</span>
+          <span class="tech-chip">Vue.js</span>
+          <span class="tech-chip">TypeScript</span>
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">Rust</span>
+          <span class="tech-chip">PostgreSQL</span>
+          <span class="tech-chip">Electron/Tauri</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process (Vertical Pinned) -->
+    <section id="processo" class="section">
+      <div class="container section__head">
+        <h2>Metodologia</h2>
+        <p>Fluxo refinado para qualidade e velocidade.</p>
+      </div>
+
+      <div class="process-container">
+        <!-- Steps -->
+        <div class="process-step" data-step="1">
+          <div class="process-content">
+            <h3>Imersão</h3>
+            <p>Entendemos seu modelo de negócio profundamente para propor a arquitetura ideal. Não escrevemos código sem
+              antes entender o "porquê".</p>
+          </div>
+        </div>
+        <div class="process-step" data-step="2">
+          <div class="process-content">
+            <h3>Prototipação</h3>
+            <p>Você visualiza a interface final antes do desenvolvimento. Ajustes rápidos, design system consolidado e
+              aprovação visual.</p>
+          </div>
+        </div>
+        <div class="process-step" data-step="3">
+          <div class="process-content">
+            <h3>Desenvolvimento</h3>
+            <p>Ciclos de sprints ágeis. Código limpo, componentizado e testado. Você acompanha o progresso em tempo
+              real.</p>
+          </div>
+        </div>
+        <div class="process-step" data-step="4">
+          <div class="process-content">
+            <h3>Escala</h3>
+            <p>Deploy automatizado, monitoramento de performance e suporte contínuo para garantir que seu produto cresça
+              com você.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Restored Content) -->
     <section class="section section--alt">
       <div class="container">
-        <header class="section__head" data-reveal>
-          <h2>Tecnologia sem limites</h2>
-          <p>Usamos as ferramentas mais modernas do mercado para garantir que seu projeto nunca fique obsoleto.</p>
+        <header class="section__head">
+          <h2>O Que Falam de Nós</h2>
         </header>
-        <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;" data-reveal>
-          <span class="badge">React / Next.js</span>
-          <span class="badge">Node.js / Python</span>
-          <span class="badge">PostgreSQL / MongoDB</span>
-          <span class="badge">AWS / Google Cloud</span>
-          <span class="badge">Flutter / React Native</span>
-          <span class="badge">TypeScript</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Diferenciais -->
-    <section class="section">
-      <div class="container grid-3 features">
-        <div class="feature" data-reveal data-delay="100">
-          <h3>Engenharia de Elite</h3>
-          <p>Código limpo, documentado e fácil de manter. Sua tecnologia é um ativo, não uma dívida.</p>
-        </div>
-        <div class="feature" data-reveal data-delay="300">
-          <h3>Parceria Estratégica</h3>
-          <p>Não somos apenas executores. Pensamos no seu negócio e sugerimos as melhores rotas.</p>
-        </div>
-        <div class="feature" data-reveal data-delay="500">
-          <h3>Transparência Total</h3>
-          <p>Acompanhe cada linha de código e cada etapa do cronograma em tempo real.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Processo -->
-    <section id="processo" class="section section--alt">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <h2>Do zero ao sucesso</h2>
-          <p>Um fluxo de trabalho refinado para garantir qualidade e prazos imbatíveis.</p>
-        </header>
-        <!-- Swiper Container -->
-        <div class="swiper swiper-processo">
-          <div class="swiper-wrapper steps-wrapper">
-            <div class="swiper-slide step-slide">
-              <div class="step" data-reveal><span>1</span>
-                <div><strong>Imersão</strong>
-                  <p>Analisamos seu modelo de negócio para propor a melhor tecnologia.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide step-slide">
-              <div class="step" data-reveal><span>2</span>
-                <div><strong>Prototipação</strong>
-                  <p>Você vê e testa a interface antes mesmo de começarmos a codar.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide step-slide">
-              <div class="step" data-reveal><span>3</span>
-                <div><strong>Desenvolvimento</strong>
-                  <p>Sprints ágeis com demonstrações semanais do progresso real.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide step-slide">
-              <div class="step" data-reveal><span>4</span>
-                <div><strong>Escala</strong>
-                  <p>Lançamento assistido e monitoramento constante de performance.</p>
-                </div>
-              </div>
-            </div>
+        <div class="grid-3">
+          <!-- Item 1: Fúlvio -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"A Cresça Soluções entregou nosso MVP em tempo recorde. A qualidade do código
+              e a proatividade da equipe foram fundamentais para nossa rodada de investimento."</div>
+            <strong>Fúlvio</strong><br><span style="color:#666">CEO @ EletroReparos</span>
           </div>
-          <!-- Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Depoimentos -->
-    <section class="section">
-      <div class="container" data-markup>
-        <header class="section__head" data-reveal>
-          <span class="badge">Cases de Sucesso</span>
-          <h2>Feedback de quem cresce conosco</h2>
-          <p>Empresas que confiaram no nosso código para escalar suas operações.</p>
-        </header>
-        <div class="testimonials-grid grid-3">
-          <!-- Os depoimentos serão renderizados aqui pela lib markup -->
-          <div class="testimonial-card" data-repeat="depoimentos" data-reveal>
-            <div class="testimonial-card__stars">★★★★★</div>
-            <blockquote class="testimonial-card__quote">“<span data-bind="texto"></span>”</blockquote>
-            <div class="testimonial-card__footer">
-              <div class="testimonial-card__avatar" data-bind="letra"></div>
-              <div>
-                <strong class="testimonial-card__author" data-bind="autor"></strong>
-                <span class="testimonial-card__role" data-bind="empresa"></span>
-              </div>
-            </div>
+          <!-- Item 2: Fernanda -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"Precisávamos de um sistema interno para nossa logistica e a Cresça nos
+              surpreendeu. O projeto foi entregue antes do prazo e com uma usabilidade incrível."</div>
+            <strong>Fernanda</strong><br><span style="color:#666">CEO @ OxenteRegrigerações</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section section--alt">
-      <div class="container container--narrow">
-        <header class="section__head text-center" data-reveal>
-          <h2>Transparência e dúvidas</h2>
-          <p>Tudo o que você precisa saber para começarmos sem fricção.</p>
-        </header>
-        <div class="faq" data-markup>
-          <details class="faq__item" data-repeat="faq" data-reveal>
-            <summary class="faq__q"><span data-bind="q"></span></summary>
-            <div class="faq__a" data-bind="a"></div>
-          </details>
+        <!-- Portfolio CTA -->
+        <div style="margin-top: 60px; text-align: center;">
+          <a href="portfolio.html" class="p-btn"
+            style="background: transparent; border: 1px solid var(--brand); color: #fff;">
+            Ver Todo o Portfolio ↗
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Trust Badges / Partners -->
-    <section class="section--tight">
-      <div class="container">
-        <div style="display:flex; justify-content:center; gap:40px; opacity:0.3; filter:grayscale(1); flex-wrap:wrap;"
-          data-reveal>
-          <span style="font-weight:900; font-size:1.5rem;">SaaS Focus</span>
-          <span style="font-weight:900; font-size:1.5rem;">E-commerce Plus</span>
-          <span style="font-weight:900; font-size:1.5rem;">Fintech Labs</span>
-          <span style="font-weight:900; font-size:1.5rem;">Cloud Arch</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contato -->
+    <!-- Contact -->
     <section id="contato" class="section">
       <div class="container">
-        <div class="contact-box" data-reveal>
-          <div class="contact-info">
-            <header class="section__head">
-              <span class="badge">Vagas Limitadas</span>
-              <h2>Pronto para elevar o nível?</h2>
-              <p>Não somos apenas uma agência, somos seu parceiro de engenharia focado em ROI.</p>
-            </header>
-            <div class="contact-methods">
-              <div class="contact-method">
-                <span class="contact-method__icon">💬</span>
-                <div>
-                  <strong>Fale em tempo real</strong>
-                  <a id="whatsapp-link" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <div class="grid-2">
+          <div>
+            <div class="hero__label">Contato</div>
+            <h2 style="margin-bottom: 20px;">Vamos Escalar seu Negócio?</h2>
+            <p style="margin-bottom: 2.5rem; color: var(--muted); max-width: 400px; font-size: 1.1rem;">
+              Não entregamos apenas código. Entregamos vantagem competitiva.
+              <br><br>
+              Se você busca performance extrema e design de elite, está no lugar certo.
+            </p>
+
+            <div class="contact-actions">
+              <a href="mailto:contato@crescaweb.com" class="email-btn">
+                <div class="icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
                 </div>
-              </div>
-              <div class="contact-method">
-                <span class="contact-method__icon">📧</span>
                 <div>
-                  <strong>Envie um e-mail</strong>
-                  <a href="mailto:contato@crescaweb.com">contato@crescaweb.com</a>
+                  <span
+                    style="display:block; font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em;">Fale
+                    Conosco</span>
+                  <span style="font-size:1.1rem; font-weight:600; color:#fff;">contato@crescaweb.com</span>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="contact-assurance">
-              <p>✓ Proposta em até 24h</p>
-              <p>✓ Acordo de Confidencialidade (NDA)</p>
-              <p>✓ Consultoria técnica inclusa</p>
+
+            <div style="margin-top: 30px; display: flex; align-items: center; gap: 10px; opacity: 0.6;">
+              <span style="font-size: 1.2rem;">🇧🇷</span>
+              <span style="font-size: 0.9rem; font-weight: 500;">Brasil / Global Remote</span>
             </div>
           </div>
-
-          <form class="form" id="lead-form" novalidate>
-            <div class="form__row">
-              <label for="nome">Como podemos te chamar?</label>
-              <input id="nome" name="nome" type="text" required placeholder="Seu nome completo" />
-            </div>
-            <div class="form__row">
-              <label for="email">E-mail corporativo</label>
-              <input id="email" name="email" type="email" required placeholder="exemplo@empresa.com" />
-            </div>
-            <div class="form__row-group">
-              <div class="form__row">
-                <label for="whats">WhatsApp</label>
-                <input id="whats" name="whats" type="tel" inputmode="tel" placeholder="(00) 00000-0000" />
+          <div class="contact-box">
+            <form id="lead-form">
+              <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" name="nome" required>
               </div>
-              <div class="form__row">
-                <label for="tipo">Área de interesse</label>
-                <select id="tipo" name="tipo" required>
-                  <option value="">Selecione</option>
-                  <option>E-commerce / Landing Page</option>
-                  <option>Software / SaaS Customizado</option>
-                  <option>App Mobile (iOS/Android)</option>
-                  <option>Consultoria / Cloud</option>
+              <div class="form-group">
+                <label>E-mail Corporativo</label>
+                <input type="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label>Interesse</label>
+                <select name="tipo">
+                  <option>Site Institucional</option>
+                  <option>Plataforma SaaS</option>
+                  <option>App Mobile</option>
                 </select>
               </div>
-            </div>
-            <div class="form__row">
-              <label for="mensagem">Sobre o seu desafio</label>
-              <textarea id="mensagem" name="mensagem" rows="4"
-                placeholder="Fale brevemente sobre o projeto e seus objetivos"></textarea>
-            </div>
-            <button class="btn btn--primary btn--full" type="submit">Solicitar Proposta Gratuita</button>
-            <p class="form__msg" id="form-msg" role="alert" aria-live="polite"></p>
-          </form>
+              <div class="form-group">
+                <label>Detalhes do Projeto</label>
+                <textarea name="mensagem" rows="4"></textarea>
+              </div>
+              <button type="submit" class="nav__cta btn--full">Enviar Solicitação</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <div class="container footer__grid">
-      <div class="footer__brand-col">
-        <a href="#" class="brand">
-          <img src="/assets/logo.png" alt="Logo Cresça Soluções" class="brand__logo" />
-          <span class="brand__name">Cresça Soluções</span>
-        </a>
-        <p class="footer__tagline">Tecnologia de elite para negócios que buscam escala e eficiência.</p>
+      <div>
+        <a href="#" class="brand">Cresça Soluções</a>
+        <p style="margin-top:1rem; color:#666;">Engenharia Digital de Elite.</p>
       </div>
-      <div class="footer__links-col">
-        <h4 class="footer__title">Links Rápidos</h4>
+      <div>
+        <h4>Navegação</h4>
         <nav class="footer__nav">
           <a href="#servicos">Serviços</a>
-          <a href="#processo">Nosso Processo</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contato">Solicitar Orçamento</a>
+          <a href="#processo">Processo</a>
+          <a href="portfolio.html">Portfolio</a>
         </nav>
       </div>
-      <div class="footer__links-col">
-        <h4 class="footer__title">Legal</h4>
+      <div>
+        <h4>Legal</h4>
         <nav class="footer__nav">
+          <a href="termos.html">Termos</a>
           <a href="privacidade.html">Privacidade</a>
-          <a href="termos.html">Termos de Uso</a>
         </nav>
       </div>
-      <div class="footer__links-col">
-        <h4 class="footer__title">Presença</h4>
-        <p>Rio Grande do Norte, Brasil<br>Atendimento Remoto Global</p>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <p>© <span id="year"></span> Cresça Soluções · Todos os direitos reservados.</p>
-      <p>Desenvolvido com performance extrema.</p>
     </div>
   </footer>
 
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Cresça Soluções",
-        "url": "https://crescaweb.com.br/",
-        "logo": "https://crescaweb.com.br/assets/logo.png",
-        "sameAs": []
-      }
-    </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="./script.js" defer></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

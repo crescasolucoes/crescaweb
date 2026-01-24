@@ -1,0 +1,56 @@
+[
+    {
+        "id": "project-1",
+        "category_1": "Ar Condicionado",
+        "category_2": "Landing Page",
+        "title": "GELAR<br>CLIMATIZAÇÃO",
+        "description": "Uma landing page para uma empresa de manutenção preventiva de ar-condicionado.",
+        "live_link": null,
+        "image": "assets/cases/1.png"
+    },
+    {
+        "id": "project-2",
+        "category_1": "Imobiliária",
+        "category_2": "Institucional + Landing Page",
+        "title": "MODELO",
+        "description": "Página institucional para uma imobiliária com foco em clareza, autoridade e geração de leads.<br>+ Painel Administrativo para gerenciamento de leads e vendas.",
+        "live_link": null,
+        "image": "assets/cases/5.png"
+    },
+    {
+        "id": "project-3",
+        "category_1": "Tragego Pago",
+        "category_2": "Landing Page",
+        "title": "CURSO",
+        "description": "Estrutura pensada para gerar leads qualificados e converter interessados em clientes de Tráfego Pago.",
+        "live_link": null,
+        "image": "assets/cases/2.png"
+    },
+    {
+        "id": "project-4",
+        "category_1": " Listas Segmentadas",
+        "category_2": "Landing Page",
+        "title": "LISTAS SEGMENTADAS",
+        "description": "Lista de leads segmentados para envio de e-mails e marketing digital.",
+        "live_link": null,
+        "image": "assets/cases/4.png"
+    },
+    {
+        "id": "project-5",
+        "category_1": " Clínica Odontológica",
+        "category_2": "Institucional",
+        "title": "CLÍNICA ODONTOLOGICA",
+        "description": "Página institucional para uma clínica odontológica com foco em clareza, autoridade e geração de leads.",
+        "live_link": null,
+        "image": "assets/cases/6.png"
+    },
+    {
+        "id": "project-6",
+        "category_1": "Agência de Marketing Digital",
+        "category_2": "Institucional",
+        "title": "NEXUS DIGITAL<br>B2B SaaS",
+        "description": "Página institucional B2B SaaS com foco em clareza, autoridade e geração de leads para a Nexus Digital.",
+        "live_link": null,
+        "image": "assets/cases/7.png"
+    }
+]
