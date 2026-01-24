@@ -7,8 +7,29 @@
   <title>Cresça Soluções — Sites, Sistemas e Aplicativos</title>
   <meta name="description"
     content="A Cresça Soluções cria sites, sistemas e aplicativos sob medida para gerar resultados reais. Diagnóstico gratuito e proposta rápida. Fale com a gente hoje!" />
+  <meta name="keywords"
+    content="desenvolvimento web, sites, aplicativos, sistemas, software house, landing page, SEO, alta performance, react, nextjs" />
+  <meta name="author" content="Cresça Soluções" />
+  <meta name="theme-color" content="#050505" />
 
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crescaweb.com.br/" />
+  <meta property="og:title" content="Cresça Soluções — Engenharia Digital de Elite" />
+  <meta property="og:description"
+    content="Não entregamos apenas sites. Entregamos infraestrutura de crescimento. Transforme sua ideia em software de alta performance." />
+  <meta property="og:image" content="https://crescaweb.com.br/assets/logo.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://crescaweb.com.br/" />
+  <meta property="twitter:title" content="Cresça Soluções — Engenharia Digital de Elite" />
+  <meta property="twitter:description"
+    content="Não entregamos apenas sites. Entregamos infraestrutura de crescimento. Transforme sua ideia em software de alta performance." />
+  <meta property="twitter:image" content="https://crescaweb.com.br/assets/logo.png" />
+
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./styles.css" />
 
   <!-- Fonts: Inter (Unified Stack) -->
@@ -137,47 +158,59 @@
       </div>
 
       <!-- GSAP Horizontal Track -->
-      <div class="services-wrapper">
-        <div class="services-track">
+      <!-- Swiper Structure -->
+      <div class="swiper services-swiper">
+        <div class="swiper-wrapper">
 
-          <div class="service-card">
-            <h3>Sites de Alta Conversão</h3>
-            <p>Landing pages e sites institucionais com design premium, focados em transformar visitantes em clientes.
-            </p>
-            <ul class="list">
-              <li>Performance extrema</li>
-              <li>SEO Avançado</li>
-              <li>Design Editorial</li>
-            </ul>
+          <div class="swiper-slide">
+            <div class="service-card">
+              <h3>Sites de Alta Conversão</h3>
+              <p>Landing pages e sites institucionais com design premium, focados em transformar visitantes em clientes.
+              </p>
+              <ul class="list">
+                <li>Performance extrema</li>
+                <li>SEO Avançado</li>
+                <li>Design Editorial</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="service-card">
-            <h3>Sistemas & SaaS</h3>
-            <p>Plataformas web complexas para gerir seu negócio ou lançar seu próprio produto digital com
-              escalabilidade.</p>
-            <ul class="list">
-              <li>Arquitetura Cloud</li>
-              <li>Segurança de Dados</li>
-              <li>API Restful</li>
-            </ul>
+          <div class="swiper-slide">
+            <div class="service-card">
+              <h3>Sistemas & SaaS</h3>
+              <p>Plataformas web complexas para gerir seu negócio ou lançar seu próprio produto digital com
+                escalabilidade.</p>
+              <ul class="list">
+                <li>Arquitetura Cloud</li>
+                <li>Segurança de Dados</li>
+                <li>API Restful</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="service-card">
-            <h3>Aplicativos Mobile</h3>
-            <p>Experiências nativas para iOS e Android que colocam sua marca no bolso do seu cliente.</p>
-            <ul class="list">
-              <li>React Native / Flutter</li>
-              <li>Offline Mode</li>
-              <li>Publicação nas Lojas</li>
-            </ul>
+          <div class="swiper-slide">
+            <div class="service-card">
+              <h3>Aplicativos Mobile</h3>
+              <p>Experiências nativas para iOS e Android que colocam sua marca no bolso do seu cliente.</p>
+              <ul class="list">
+                <li>React Native / Flutter</li>
+                <li>Offline Mode</li>
+                <li>Publicação nas Lojas</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="service-card" style="justify-content:center; align-items:center; text-align:center;">
-            <h3>Sua Ideia <br>Aqui</h3>
-            <a href="#contato" class="nav__cta" style="margin-top:20px;">Fale Conosco</a>
+          <div class="swiper-slide">
+            <div class="service-card" style="justify-content:center; align-items:center; text-align:center;">
+              <h3>Sua Ideia <br>Aqui</h3>
+              <a href="#contato" class="nav__cta" style="margin-top:20px;">Fale Conosco</a>
+            </div>
           </div>
 
         </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
       </div>
     </section>
 
@@ -185,15 +218,13 @@
     <section class="section section--alt">
       <div class="container text-center">
         <div class="tech-cloud">
-          <span class="tech-chip">Next.js</span>
-          <span class="tech-chip">React</span>
-          <span class="tech-chip">Node.js</span>
-          <span class="tech-chip">Vue.js</span>
-          <span class="tech-chip">TypeScript</span>
-          <span class="tech-chip">Python</span>
-          <span class="tech-chip">Rust</span>
-          <span class="tech-chip">PostgreSQL</span>
-          <span class="tech-chip">Electron/Tauri</span>
+          <span class="tech-chip">Web & SaaS</span>
+          <span class="tech-chip">Desktop</span>
+          <span class="tech-chip">Mobile</span>
+          <span class="tech-chip">Alta Performance</span>
+          <span class="tech-chip">Experiência do Usuário</span>
+          <span class="tech-chip">Conversão</span>
+
         </div>
       </div>
     </section>
@@ -363,7 +394,9 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./script.js" defer></script>
+  <script src="./slider.js" defer></script>
 </body>
 
 </html>

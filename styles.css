@@ -105,7 +105,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100dvw;
   z-index: 100;
   padding: 30px 0;
   mix-blend-mode: normal;
@@ -219,7 +219,7 @@ a {
   letter-spacing: -0.04em;
   margin-bottom: 2rem;
   line-height: 1.05;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(50px);
 }
 
@@ -305,6 +305,7 @@ a {
 
 .hero__scroll {
   position: absolute;
+  margin-top: 30px;
   bottom: 40px;
   left: 40px;
   /* Align Left */
@@ -352,7 +353,7 @@ a {
 
   .hero__scroll {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 25%);
   }
 }
 
@@ -395,31 +396,74 @@ a {
 
 /* Services */
 .services-wrapper {
-  width: 100%;
+  padding-bottom: 60px;
+  /* Increased padding to clear dots */
+  position: relative;
 }
 
 .services-track {
-  display: flex;
-  gap: 24px;
-  padding-left: 5vw;
-  width: fit-content;
+  display: flex !important;
 }
 
 .service-card {
-  min-width: 400px;
-  height: 520px;
+  min-width: unset;
+  height: 600px;
+  /* Increased height */
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 48px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s;
+  border-radius: 12px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .service-card:hover {
   border-color: var(--brand);
-  transform: translateY(-10px);
+  transform: translateY(10px);
+}
+
+.services-swiper {
+  height: 75dvh;
+}
+
+/* Pagination Dots (Swiper Standard Override) */
+.services-swiper .swiper-pagination {
+  bottom: 0px !important;
+  /* Positions at bottom of padding area */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.swiper-pagination-bullet {
+  background: var(--muted) !important;
+  opacity: 0.3 !important;
+  width: 8px !important;
+  height: 8px !important;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+  /* Reset default swiper margin */
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--brand) !important;
+  opacity: 1 !important;
+  width: 24px !important;
+  /* Elongated active dot */
+  border-radius: 4px !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
 }
 
 .service-card h3 {
@@ -481,16 +525,16 @@ a {
   align-items: center;
   justify-content: center;
   border-left: 1px solid var(--border);
-
   margin-left: 50%;
   padding-left: 60px;
   position: relative;
-  opacity: 0.2;
+  opacity: 1;
   /* Dimmed by default to allow highlight */
   transition: opacity 0.5s;
 }
 
 .process-step.active {
+  padding: 10px 10x 10x 60px;
   opacity: 1;
 }
 
@@ -830,31 +874,43 @@ textarea:focus {
 
   /* Process Fixes */
   /* Process Fixes (Mobile) */
+  /* Process Fixes (Mobile) - Compact Timeline */
   .process-step {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 30px;
-    margin-left: 0;
+    justify-content: center;
+    min-height: auto;
+    /* Reset large desktop height */
+    height: auto;
+
+    /* Timeline Layout */
+    margin-left: 44px;
+    /* Left-aligned line */
+    padding-left: 30px;
+    /* Space for bubble/content */
+    padding-bottom: 40px;
+
     border-left: 1px solid var(--border);
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
+    background: transparent;
+    border-radius: 0;
+    margin-bottom: 0;
   }
 
-  /* Reset the bubble position relative to the card, not absolute off-screen */
   .process-step::before {
-    position: static;
-    /* Stack it */
+    position: absolute;
+    left: -20px;
+    /* Center on line */
+    top: 0;
+    /* Align with top */
     transform: none;
-    margin-bottom: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem;
-    left: auto;
+    margin-bottom: 0;
   }
 
   .process-content {
-    padding: 0;
+    padding: 24px;
+    width: 100%;
+    /* Keep the glass look from desktop, just adjust padding if needed */
   }
 
   .process-content h3 {
@@ -863,10 +919,45 @@ textarea:focus {
   }
 
   .service-card {
-    min-width: 280px;
+    min-width: 85vw;
+    /* Slider Card */
+    width: 85vw;
     height: auto;
-    min-height: 480px;
+    min-height: 450px;
     padding: 30px;
+    scroll-snap-align: center;
+    margin-right: 0;
+  }
+
+  /* Services Slider Container (Restored & Reinforced) */
+  .services-wrapper {
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100vw;
+    margin-left: -5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 30px;
+    display: block !important;
+    /* Ensure it's not flex column from parent */
+    cursor: grab;
+  }
+
+  .services-wrapper.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+  }
+
+  .services-track {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Force Horizontal */
+    gap: 20px;
+    width: max-content !important;
+    padding-right: 20px;
   }
 }
 

@@ -175,7 +175,7 @@ function initAnimations() {
             trigger: section,
             start: "top top",
             pin: true,
-            pinSpacing: false,
+            pinSpacing: true, // Enable spacing so content pushes down
             end: "bottom top",
             onUpdate: (self) => {
                 if (self.progress > 0) {

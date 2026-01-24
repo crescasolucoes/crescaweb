@@ -17,63 +17,15 @@ tl.to(".hero__title", { y: 0, opacity: 1, duration: 1, ease: "power3.out" })
     .from(".wf-grid > *", { y: 20, opacity: 0, stagger: 0.1, duration: 0.6 }, "-=0.4")
     .from(".wf-code > *", { x: 50, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.6");
 
-// Hero Scroll Exit/Enter (Refined with Force State)
-gsap.fromTo(".hero__content",
-    { opacity: 1, y: 0, filter: "blur(0px)" },
-    {
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom 60%",
-            scrub: true,
-        },
-        y: -50,
-        opacity: 0,
-        filter: "blur(10px)",
-        ease: "none",
-        // onLeaveBack: self => self.disable(),
-        invalidateOnRefresh: true,
-    }
-);
+
 
 
 // 2. Horizontal Scroll Section (Services)
-ScrollTrigger.matchMedia({
-    // Desktop only
-    "(min-width: 900px)": function () {
-        const servicesSection = document.getElementById("servicos");
-        const track = document.querySelector(".services-track");
-
-        if (servicesSection && track) {
-            const getScrollAmount = () => -(track.scrollWidth - window.innerWidth + 100);
-
-            if (track.scrollWidth > window.innerWidth) {
-                gsap.to(track, {
-                    x: getScrollAmount,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: "#servicos",
-                        start: "top top",
-                        end: () => `+=${track.scrollWidth}`,
-                        pin: true,
-                        scrub: 1,
-                        // Clean unpin logic
-                        onLeaveBack: self => self.disable(),
-                        onEnter: self => self.enable(),
-                        invalidateOnRefresh: true,
-                    }
-                });
-            }
-        }
-    },
-    // Mobile cleanup
-    "(max-width: 899px)": function () {
-        // Force cleanup of any lingering pins if resized from desktop
-        ScrollTrigger.getAll().forEach(t => {
-            if (t.vars.trigger === "#servicos") t.kill();
-        });
-    }
-});
+// Replaced by Swiper.js (slider.js) as requested
+const servicesSection = document.getElementById("servicos");
+if (servicesSection) {
+    // Clean up any potential conflicts if standard scroll logic existed
+}
 
 // 3. Vertical Process Timeline
 // Highlighting steps as they come into the center of the viewport
