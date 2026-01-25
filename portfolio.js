@@ -254,6 +254,45 @@ function initCursorGlow() {
 }
 
 // Start
+// --- Presentation Mode Logic (For Video Recording) ---
+function initPresentationMode() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.has('mode') || urlParams.get('mode') !== 'presentation') return;
+
+    // 1. UI Cleanup Class
+    document.body.classList.add('presentation-mode');
+    console.log("🎥 Presentation Mode Active");
+
+    // 2. Auto Scroll Logic
+    const speed = 2; // Pixels per tick
+    let scrollPos = 0;
+
+    // Disable user scroll interaction to prevent jitter
+    document.body.style.overflow = 'hidden';
+
+    function autoScroll() {
+        scrollPos += speed;
+        // Native window scroll for GSAP ScrollTrigger compatibility
+        window.scrollTo(0, scrollPos);
+
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        // Loop or Stop at bottom
+        if (scrollPos < maxScroll) {
+            requestAnimationFrame(autoScroll);
+        } else {
+            console.log("🎥 Scene Finished");
+        }
+    }
+
+    // specific trigger delay to allow recording software to start
+    setTimeout(() => {
+        autoScroll();
+    }, 2000); // 2s delay start
+}
+
+// Start
+initPresentationMode();
 initCursorGlow();
 initPortfolio();
 

@@ -102,15 +102,18 @@ a {
 
 /* Header */
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100dvw;
-  z-index: 100;
-  padding: 30px 0;
+  z-index: 1000;
+  padding: 20px 0;
   mix-blend-mode: normal;
   /* Removed difference to fix logo colors if needed, manually styling text white */
-  background: linear-gradient(to bottom, rgba(5, 5, 5, 0.9) 0%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.8) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header__inner {
@@ -174,11 +177,10 @@ a {
 
 /* Hero Section - Institutional / Editorial */
 .hero {
-  min-height: 100dvh;
-  /* Allow it to breathe */
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  padding: 120px 0;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
   /* For large abstract shapes */
@@ -210,6 +212,7 @@ a {
   border: 1px solid rgba(34, 197, 94, 0.3);
   padding: 8px 16px;
   border-radius: 100px;
+
   background: rgba(34, 197, 94, 0.05);
 }
 
@@ -327,9 +330,19 @@ a {
 }
 
 @media(max-width: 900px) {
+  .hero {
+    min-height: 85vh;
+    /* Reduced from 100 to pull content up */
+    padding: 100px 0 60px;
+    /* Reduced top padding */
+    align-items: flex-start;
+    /* Align closer to top */
+  }
+
   .hero .container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
   }
 
   .hero__content {
@@ -337,13 +350,24 @@ a {
     text-align: center;
   }
 
+  .hero__title {
+    font-size: 2.5rem;
+    /* Smaller title on mobile */
+    margin-bottom: 1.5rem;
+  }
+
   .hero__subtitle {
     margin-left: auto;
     margin-right: auto;
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
   .hero__actions {
     justify-content: center;
+    opacity: 1;
+    /* Force opacity in case animation delays */
+    transform: none;
   }
 
   .hero__abstract {
@@ -353,7 +377,8 @@ a {
 
   .hero__scroll {
     left: 50%;
-    transform: translate(-50%, 25%);
+    transform: translate(-50%, 0);
+    bottom: 20px;
   }
 }
 
@@ -797,6 +822,73 @@ textarea:focus {
   padding: 10px;
 }
 
+
+/* Sticky Offer Bar */
+.offer-bar {
+  background: linear-gradient(90deg, #111 0%, #004d25 100%);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+  position: relative;
+  z-index: 1001;
+}
+
+.offer-bar__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.offer-tag {
+  background: var(--brand);
+  color: #000;
+  font-weight: 800;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.offer-bar p {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.offer-bar strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.offer-link {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.offer-link:hover {
+  border-bottom-color: var(--brand);
+}
+
+@media(max-width: 600px) {
+  .offer-bar {
+    font-size: 0.8rem;
+    padding: 12px 0;
+  }
+
+  .offer-bar__content {
+    gap: 8px;
+    flex-direction: column;
+  }
+}
+
+
 .nav__toggle span {
   display: block;
   width: 25px;
@@ -865,7 +957,7 @@ textarea:focus {
 
   .hero {
     min-height: auto;
-    padding-top: 150px;
+    padding-top: 80px;
     padding-bottom: 80px;
   }
 

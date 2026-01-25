@@ -390,3 +390,28 @@ body.portfolio-page {
     opacity: 1;
   }
 }
+
+/* Presentation / Recording Mode */
+body.presentation-mode::-webkit-scrollbar {
+  display: none;
+}
+
+body.presentation-mode {
+  cursor: none;
+  /* Hide real mouse */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide Nav and Interaction Hints in Presentation Mode */
+body.presentation-mode .p-nav,
+body.presentation-mode .scroll-indicator,
+body.presentation-mode .p-modal-hint,
+body.presentation-mode .p-btn-top {
+  display: none !important;
+}
+
+/* Ensure Logo and text are fully visible */
+body.presentation-mode .p-section.intro {
+  opacity: 1 !important;
+}
