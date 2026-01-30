@@ -9,6 +9,15 @@
         "image": "assets/cases/1.png"
     },
     {
+        "id": "aurora",
+        "category_1": "Energia Solar",
+        "category_2": "Institucional + Landing Page",
+        "title": "AURORA SOLAR",
+        "description": "Landing Page de alta performance para energia solar com foco em conversão via WhatsApp. Design premium 'Engineering Trust', simulação interativa e arquitetura otimizada com Next.js, Tailwind e Framer Motion.",
+        "live_link": null,
+        "image": "assets/cases/aurora.png"
+    },
+    {
         "id": "project-2",
         "category_1": "Imobiliária",
         "category_2": "Institucional + Landing Page",
