@@ -1,5 +1,14 @@
 [
     {
+        "id": "project-1mtennis",
+        "category_1": "Escola de Tênis",
+        "category_2": "Landing Page",
+        "title": "M TENNIS",
+        "description": "Uma landing page para uma escola de tênis com foco em captação de alunos.",
+        "live_link": "https://mtennis.com.br/",
+        "image": "assets/cases/mtennis.png"
+    },
+    {
         "id": "project-1",
         "category_1": "Ar Condicionado",
         "category_2": "Landing Page",
