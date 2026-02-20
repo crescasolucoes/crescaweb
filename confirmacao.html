@@ -19,6 +19,29 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles.css" />
+
+
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1274392651244475');
+        fbq('track', 'PageView');
+        fbq('track', 'Contact');
+        fbq('track', 'ViewContent');
+        fbq('track', 'Lead');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1274392651244475&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
     <style>
         /* Specific styles for confirmation page */
         .hero--centered {
@@ -63,6 +86,11 @@
 </head>
 
 <body>
+    <script>fbq('track', 'Purchase', {
+            value: 597.00,
+            currency: 'BRL'
+        });
+    </script>
 
     <body>
         <div class="cursor-glow"></div>
