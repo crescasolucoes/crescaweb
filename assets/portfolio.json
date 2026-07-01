@@ -1,5 +1,14 @@
 [
     {
+        "id": "project-univet",
+        "category_1": "Clínica Veterinária",
+        "category_2": "Landing Page",
+        "title": "Univet Dog'Shop",
+        "description": "Landing page para clínica veterinária com foco em captação de clientes.",
+        "live_link": "https://univetmossoro.com/",
+        "image": "assets/cases/univet.png"
+    },
+    {
         "id": "project-1mtennis",
         "category_1": "Escola de Tênis",
         "category_2": "Landing Page",
